@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Birthday Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100vh;
+            background: url('https://i.ibb.co/wZJxDxwz/Happy-Birthday-Instagram-Story.png') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(130, 130, 130, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 2s forwards;
+            margin-bottom: 80px;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        input {
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid rgb(177, 177, 177);
+            border-radius: 5px;
+            background-color: rgb(154, 154, 154);
+        }
+        button {
+            padding: 10px;
+            background: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+        }
+        #message {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="password" id="password" placeholder="****">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('password').value;
+            if (password === '123') {
+                window.location.href = 'welcome.html';
+            } else {
+                document.getElementById('message').innerText = 'Incorrect password';
+            }
+        }
+    </script>
+</body>
+</html>
